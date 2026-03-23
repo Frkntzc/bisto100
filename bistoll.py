@@ -10,17 +10,6 @@ import time
 
 console = Console()
 
-# --- 1. MAKRO VERİ PANELİ ---
-def get_macro_data():
-    try:
-        usd = yf.Ticker("USDTRY=X").fast_info['last_price']
-        gold = yf.Ticker("GC=F").fast_info['last_price']
-        bist = yf.Ticker("XU100.IS").fast_info['last_price']
-        return {"USD/TRY": usd, "Altın (Ons)": gold, "BIST 100": bist}
-    except:
-        return {"USD/TRY": 0, "Altın (Ons)": 0, "BIST 100": 0}
-
-# --- 2. GELİŞMİŞ HABER DEDEKTÖRÜ ---
 def get_comprehensive_news(symbol):
     rss_urls = [
         "https://tr.investing.com/rss/news_25.rss",        
@@ -104,10 +93,7 @@ def analyze_stock(symbol):
         console.print(f"[red]Teknik veri hatası: {e}[/red]")
         return
 
-    # --- RAPOR EKRANI ---
     console.clear()
-    macro = get_macro_data()
-    console.print(Panel(f"💵 Dolar: {macro['USD/TRY']:.2f} | 📈 BIST100: {macro['BIST 100']:.0f} | 🟡 Altın: {macro['Altın (Ons)']:.0f}", title="Küresel Piyasa", border_style="blue"))
 
     # Vade Tablosu (Markup hatası düzeltildi)
     v_table = Table(title=f"\n[bold yellow]{symbol} Stratejik Analiz[/bold yellow]")
