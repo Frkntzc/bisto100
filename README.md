@@ -4,4 +4,4 @@ otomatik hesaplayan bir algoritmadır. Borsa İstanbul (BIST) bünyesindeki yüz
 momentum, hacim artışı vb.) göre saniyeler içinde filtreler. Manuel analiz sürecini %90 oranında optimize ederek veri odaklı karar verme 
 süresini ciddi oranda kısaltır.
 
-!!! Pip install ile gerekli bağlantılar kurulmalı yfinance, feedparser, tradingview_ta, rich
+!!! pip install ile gerekli bağlantılar kurulmalı yfinance, feedparser, tradingview_ta, rich
